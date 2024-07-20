@@ -1,0 +1,4 @@
+PINAGEM:
+    PWM : 1 pino output (velocidade do motor)
+    Ponte H: 2 pinos output (direção do motor)
+    Encoder: 2 pinos input (leitura dos pulsos do encoder) (já são declarados automaticamente na biblioteca)
