@@ -20,6 +20,7 @@ O projeto abrange atuações técnicas em mecânica, eletrônica e programação
 
 ### Ubuntu 20.04 LTS
 A instalação desta distro do Linux é muito importante devido à sua grande compatibilidade com as ferramentas ROS (Robot Operating System) e o ESP-IDF (Espressif IoT Development Framework), as quais são essênciais para o nosso projeto.
+
 Para baixar, acesse o link [Ubuntu](https://ubuntu.com/download)
 
 ### PlataformIO
