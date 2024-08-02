@@ -14,7 +14,7 @@ Este repositório contém os códigos utilizados no Projeto dos Bixos do núcleo
 
 O projeto abrange atuações técnicas em mecânica, eletrônica e programação. Todas as áreas devem funcionar juntas e em harmonia.
 
-# Ferramentas
+## Ferramentas
 
 ### Git
 
@@ -27,7 +27,7 @@ Para baixar, acesse o link [Ubuntu](https://ubuntu.com/download)
 
 ### ROS
 
-# Microcontroladores
+## Microcontroladores
 
 ### ESP32
 
