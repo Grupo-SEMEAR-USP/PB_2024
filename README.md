@@ -15,9 +15,10 @@ Este é repositório do Projeto dos Bixos do núcleo de Robótica Móvel Autonom
 - [ ] Ausência de tempo máximo para a exploração.
 
 
-> O projeto abrange atuações em mecânica, eletrônica e programação, essas áreas devem funcionar juntas e em harmonia.
+> O projeto abrange atuações em mecânica, eletrônica e programação, juntas elas devem funcionar em harmonia.
 
 [Perseverence, robô explorador da Nasa]
+
 ![Perseverence, robô explorador da Nasa](https://s2.glbimg.com/BYR-XBxo73uWsG6s5jsWnZDdlRg=/620x350/e.glbimg.com/og/ed/f/original/2021/02/18/117021449_diana6.jpg)
 
 ## Ferramentas
