@@ -2,7 +2,6 @@
 
 ### [RMA] Projeto dos Bixos 2024 - SEMEAR
 Este é repositório do Projeto dos Bixos do núcleo de Robótica Móvel Autonoma [RMA] do grupo SEMEAR, vinculado à Universidade de São Paulo. Nosso time tem o objetivo de construir um robô autônomo de reconhecimento de áreas, também conhecido como robô explorador. 
-
 **Os códigos utilizados para executar as tarefas e análises do projeto estão documentados neste repositório.**
 
 ### Objetivos do robô:
@@ -14,8 +13,7 @@ Este é repositório do Projeto dos Bixos do núcleo de Robótica Móvel Autonom
 - Encontrar as rotas mais otimizadas ao planejar trajetórias.
 - Ausência de tempo máximo para a exploração.
 
-O projeto abrange atuações em mecânica, eletrônica e programação, essas áreas devem funcionar juntas e em harmonia.
-
+O projeto abrange atuações em mecânica, eletrônica e programação, essas áreas devem funcionar juntas e em harmonia
 ![Perseverence, robô explorador da Nasa](https://s2.glbimg.com/BYR-XBxo73uWsG6s5jsWnZDdlRg=/620x350/e.glbimg.com/og/ed/f/original/2021/02/18/117021449_diana6.jpg)
 
 ## Ferramentas
