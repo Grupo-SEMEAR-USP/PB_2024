@@ -6,13 +6,13 @@ Este é repositório do Projeto dos Bixos do núcleo de Robótica Móvel Autonom
 **Os códigos utilizados para executar as tarefas e análises do projeto estão documentados neste repositório.**
 
 ### Objetivos do robô:
-[x] Deslocar-se de forma terrestre e totalmente autônoma;
-[x] Explorar o ambiente desconhecido;
-[x] Ter um sistema de localização minimamente preciso;
-[x] Não colidir com os objetos;
-[x] Gerar um mapa em tempo real do ambiente;
-[x] Encontrar as rotas mais otimizadas ao planejar trajetórias.
-[x] Ausência de tempo máximo para a exploração.
+- [x] Deslocar-se de forma terrestre e totalmente autônoma;
+- [x] Explorar o ambiente desconhecido;
+- [x] Ter um sistema de localização minimamente preciso;
+- [x] Não colidir com os objetos;
+- [x] Gerar um mapa em tempo real do ambiente;
+- [x] Encontrar as rotas mais otimizadas ao planejar trajetórias.
+- [x] Ausência de tempo máximo para a exploração.
 
 ![Perseverence, robô explorador da Nasa](https://s2.glbimg.com/BYR-XBxo73uWsG6s5jsWnZDdlRg=/620x350/e.glbimg.com/og/ed/f/original/2021/02/18/117021449_diana6.jpg)
 
