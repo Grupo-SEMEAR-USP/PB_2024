@@ -14,3 +14,23 @@ Este repositório contém os códigos utilizados no Projeto dos Bixos do núcleo
 
 O projeto abrange atuações técnicas em mecânica, eletrônica e programação. Todas as áreas devem funcionar juntas e em harmonia.
 
+# Ferramentas
+
+### Git
+
+### Ubuntu 20.04 LTS
+A instalação desta distro do Linux é muito importante devido à sua grande compatibilidade com as ferramentas ROS (Robot Operating System) e o ESP-IDF (Espressif IoT Development Framework), as quais são essênciais para o nosso projeto.
+Para baixar, acesse o link [Ubuntu](https://ubuntu.com/download)
+
+### PlataformIO
+
+### ROS
+
+# Microcontroladores
+
+### ESP32
+
+### Rasberry PI
+
+Para as entradas e saídas dos microcontroladoradores, são usados GPIOs
+
