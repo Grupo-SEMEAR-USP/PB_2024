@@ -31,6 +31,7 @@ A instalação desta distro do Linux é muito importante devido à sua grande co
 Para baixar, acesse o link [Ubuntu](https://ubuntu.com/download)
 
 ### PlataformIO
+PlatformIO é uma plataforma de desenvolvimento de código aberto para programação de microcontroladores e sistemas embarcados. Ela suporta uma ampla gama de placas e frameworks, facilitando a compilação e o upload de códigos para diferentes dispositivos, incluindo ESP32 que utilizamos em nossos projetos.
 
 ### ROS
 
