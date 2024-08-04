@@ -45,6 +45,7 @@ Microcontroladores são circuitos integrados que funcionam como pequenos computa
 microcontrolador desenvolvido pela Espressif Systems, amplamente utilizado na indústria de Internet das Coisas (IoT) devido às suas capacidades de processamento, conectividade e periféricos integrados. Suas principais características são:
 - Dual-core: Equipado com dois núcleos Tensilica Xtensa® 32-bit LX6, permitindo multitarefa eficiente e performance aprimorada, com frequência de operação configurável até 240 MHz
 - Conectividade: Oferece suporte integrado para Wi-Fi e Bluetooth, facilitando a construção de projetos de IoT com conexões sem fio robustas.
+
 A ESP32 possui um pinout flexível, com um grande número de pinos GPIO que podem ser configurados para diferentes funções. alguns exemplos de periféricos são: GPIO (General Purpose Input/Output), Wi-Fi, Bluetooth, UART (Universal Asynchronous Receiver/Transmitter), SPI (Serial Peripheral Interface), I2C (Inter-Integrated Circuit), ADC (Analog-to-Digital Converter), PWM (Pulse Width Modulation), Interrupção e RTC (Real-Time Clock).
 
 Para a programação da ESP32, utilizaremos o ESP-IDF, na PlatformIO, o qual se trata de um conjunto de ferramentas de desenvolvimento oficial da Espressif Systems, projetado especificamente para programação avançada da família ESP32.
