@@ -39,14 +39,14 @@ A PlataformIO é instalada com a extensão PlatformIO IDE através do Marketplac
 
 ## Microcontroladores
 
-Microcontroladores são pequenos computadores em um chip, contendo processador, memória e periféricos de I/O. Eles controlam dispositivos automatizados e executam tarefas específicas. Uma característica chave é a comunicação com periféricos externos via GPIOs, permitindo conexão com sensores e atuadores. Além disso, possuem interfaces como UART, SPI, I2C, ADC e PWM para interagir com diversos componentes.
+Microcontroladores são pequenos computadores em um chip, contendo processador, memória e periféricos de I/O. Eles controlam dispositivos automatizados e executam tarefas específicas. Uma característica chave é a comunicação com periféricos externos via GPIOs, permitindo conexão com sensores e atuadores. Além disso, possuem diversas interfaces para interagir com diversos componentes.
 
 ### ESP32
 microcontrolador desenvolvido pela Espressif Systems, amplamente utilizado na indústria de Internet das Coisas (IoT) devido às suas capacidades de processamento, conectividade e periféricos integrados. Suas principais características são:
 - Dual-core: Equipado com dois núcleos Tensilica Xtensa® 32-bit LX6, permitindo multitarefa eficiente e performance aprimorada, com frequência de operação configurável até 240 MHz.
 - Conectividade: Oferece suporte integrado para Wi-Fi e Bluetooth, facilitando a construção de projetos de IoT com conexões sem fio robustas.
 
-A ESP32 possui um pinout flexível, com um grande número de pinos GPIO que podem ser configurados para diferentes funções. alguns exemplos de periféricos são: GPIO (General Purpose Input/Output), Wi-Fi, Bluetooth, UART (Universal Asynchronous Receiver/Transmitter), SPI (Serial Peripheral Interface), I2C (Inter-Integrated Circuit), ADC (Analog-to-Digital Converter), PWM (Pulse Width Modulation), Interrupção e RTC (Real-Time Clock).
+A ESP32 possui um pinout flexível, com um grande número de pinos GPIO que podem ser configurados para diferentes funções. alguns exemplos de periféricos são: GPIO, Wi-Fi, Bluetooth, UART, SPI, I2C, ADC, PWM, Interrupção e RTC.
 
 Para a programação da ESP32, utilizaremos o ESP-IDF, na PlatformIO, o qual se trata de um conjunto de ferramentas de desenvolvimento oficial da Espressif Systems, projetado especificamente para programação avançada da família ESP32.
 
