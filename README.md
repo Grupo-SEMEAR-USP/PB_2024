@@ -23,8 +23,6 @@ Este é o repositório do Projeto dos Bixos do núcleo de Robótica Móvel Auton
 
 ## Ferramentas
 
-### Git
-
 ### Ubuntu 20.04 LTS
 A instalação desta distro do Linux é muito importante devido à sua grande compatibilidade com as ferramentas ROS (Robot Operating System) e o ESP-IDF (Espressif IoT Development Framework), as quais são essênciais para o nosso projeto.
 
@@ -32,6 +30,10 @@ Para baixar, acesse o link [Ubuntu](https://ubuntu.com/download)
 
 ### PlataformIO
 PlatformIO é uma plataforma de desenvolvimento de código aberto para programação de microcontroladores e sistemas embarcados. Ela suporta uma ampla gama de placas e frameworks, facilitando a compilação e o upload de códigos para diferentes dispositivos, incluindo ESP32 que utilizamos em nossos projetos.
+
+A PlataformIO é instalada com a extensão PlatformIO IDE através do Marketplace do Visual Studio Code. Após instalar, basta criar um novo projeto e selecionar a DOIT ESP32 DEVKIT V1 como Board e Espdif como Framework e finalizar. Assim, o projeto para a criação, compilação e testes dos códigos estará pronto. 
+
+![PlataformIO](https://maker.pro/storage/7dZZSxf/7dZZSxfO1Sh6o1209wvdZrgFqWGxhmMNvUAV1F0u.jpeg)
 
 ### ROS
 
