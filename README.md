@@ -39,11 +39,13 @@ A PlataformIO é instalada com a extensão PlatformIO IDE através do Marketplac
 
 ## Microcontroladores
 
-Microcontroladores são circuitos integrados que funcionam como pequenos computadores. Eles contêm um processador, memória e periféricos de entrada/saída (I/O) em um único chip. Sua principal função é controlar outros dispositivos ou sistemas automatizados. Os microcontroladores são projetados para executar tarefas específicas e repetitivas. Diferem dos microprocessadores, que são mais potentes e utilizados em computadores para executar uma ampla gama de aplicações. Uma característica importante dos microcontroladores é sua capacidade de se comunicar com periféricos externos. Eles possuem GPIOs (General Purpose Input/Output), que permitem a conexão de sensores, atuadores e outros dispositivos. Além disso, podem incluir interfaces como UARTs, SPI (Serial Peripheral Interface), I2C (Inter Integrated Circuit), ADCs (Analog to Digital Converters) e PWMs (Pulse Width Modulation), permitindo a interação com uma ampla gama de componentes e sensores.
+Microcontroladores são circuitos integrados que funcionam como pequenos computadores. Eles contêm um processador, memória e periféricos de entrada/saída (I/O) em um único chip. Sua principal função é controlar outros dispositivos ou sistemas automatizados e executar tarefas específicas e repetitivas. 
+
+Uma característica importante dos microcontroladores é sua capacidade de se comunicar com periféricos externos. Eles possuem GPIOs (General Purpose Input/Output), que permitem a conexão de sensores, atuadores e outros dispositivos. Além disso, podem incluir interfaces como UARTs, SPI (Serial Peripheral Interface), I2C (Inter Integrated Circuit), ADCs (Analog to Digital Converters) e PWMs (Pulse Width Modulation), permitindo a interação com uma ampla gama de componentes e sensores.
 
 ### ESP32
 microcontrolador desenvolvido pela Espressif Systems, amplamente utilizado na indústria de Internet das Coisas (IoT) devido às suas capacidades de processamento, conectividade e periféricos integrados. Suas principais características são:
-- Dual-core: Equipado com dois núcleos Tensilica Xtensa® 32-bit LX6, permitindo multitarefa eficiente e performance aprimorada, com frequência de operação configurável até 240 MHz
+- Dual-core: Equipado com dois núcleos Tensilica Xtensa® 32-bit LX6, permitindo multitarefa eficiente e performance aprimorada, com frequência de operação configurável até 240 MHz.
 - Conectividade: Oferece suporte integrado para Wi-Fi e Bluetooth, facilitando a construção de projetos de IoT com conexões sem fio robustas.
 
 A ESP32 possui um pinout flexível, com um grande número de pinos GPIO que podem ser configurados para diferentes funções. alguns exemplos de periféricos são: GPIO (General Purpose Input/Output), Wi-Fi, Bluetooth, UART (Universal Asynchronous Receiver/Transmitter), SPI (Serial Peripheral Interface), I2C (Inter-Integrated Circuit), ADC (Analog-to-Digital Converter), PWM (Pulse Width Modulation), Interrupção e RTC (Real-Time Clock).
