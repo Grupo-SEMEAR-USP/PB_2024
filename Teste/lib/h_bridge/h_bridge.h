@@ -46,7 +46,7 @@ typedef enum{
 
 #define LEDC_CHANNEL_R LEDC_CHANNEL_0
 #define LEDC_CHANNEL_L LEDC_CHANNEL_1
-#define LEDC_CHANNEL(SIDE) (SIDE == MOTOR_RIGHT)? LEDC_CHANNEL_R : LEDC_CHANNEL_R
+#define LEDC_CHANNEL(SIDE) (SIDE == MOTOR_RIGHT)? LEDC_CHANNEL_R : LEDC_CHANNEL_L
 
 //Funções
 void init_gpio(type_side_motor motor);

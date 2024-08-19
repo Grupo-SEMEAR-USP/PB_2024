@@ -2,11 +2,7 @@
 
 #include "encoder.h"
 
-pcnt_unit_handle_t right_encoder;
-pcnt_unit_handle_t left_encoder;
 const char *TAG_ENCODER = "Encoder";
-
-#define ENC_SIDE(ENC) ENC == (ENC_LEFT) ? left_encoder : right_encoder
 
 // Inicializa o encoder
 pcnt_unit_handle_t init_encoder(type_side_encoder encoder){ 
@@ -36,6 +32,7 @@ pcnt_unit_handle_t init_encoder(type_side_encoder encoder){
     };
     pcnt_channel_handle_t pcnt_chan_a = NULL;
     ESP_ERROR_CHECK(pcnt_new_channel(selected_encoder, &chan_a_config, &pcnt_chan_a));
+    
     pcnt_chan_config_t chan_b_config = {               // Canal B
         .edge_gpio_num = ENCODER_CHA_B(encoder),
         .level_gpio_num = ENCODER_CHA_A(encoder),

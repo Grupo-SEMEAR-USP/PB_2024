@@ -1,8 +1,6 @@
 #include "h_bridge.h" //inclui biblioteca local
 #include "encoder.h"
 
-
-
 void app_main() {
     init_gpio(MOTOR_RIGHT);
     init_pwm(MOTOR_RIGHT);
@@ -47,8 +45,5 @@ void app_main() {
         //vel_motor(MOTOR_RIGHT, maxRes);
         vTaskDelay(60 / portTICK_PERIOD_MS); 
         pulse_count(encoderR); //qtde d e pulso a cada 500ms
-
-
-
     }
 }
