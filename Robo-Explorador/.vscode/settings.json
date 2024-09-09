@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "pid_ctrl.h": "c",
+        "pid.h": "c",
+        "encoder.h": "c"
+    }
+}

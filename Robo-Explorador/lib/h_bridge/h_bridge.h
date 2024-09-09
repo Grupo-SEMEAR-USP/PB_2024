@@ -7,8 +7,6 @@
 #include "esp_err.h"
 #include "driver/gpio.h" //Funcionamento do GPIO
 #include "driver/ledc.h"
-
-    //(pra que são?)
 #include "esp_log.h"
 
 #include <freertos/FreeRTOS.h>

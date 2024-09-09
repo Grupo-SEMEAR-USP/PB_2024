@@ -6,11 +6,6 @@
 #include "h_bridge.h"
 #include "esp_err.h"
 
-typedef enum{
-    MOTOR_RIGHT = 0,
-    MOTOR_LEFT = 1,
-} type_side_motor;
-
 #define VAL_BASE 100 // ??
 
 // (Atualizar parâmetros)
@@ -39,5 +34,6 @@ typedef enum{
 #define min_integral(SIDE) (SIDE == MOTOR_RIGHT)? MIN_INTEGRAL_R : MIN_INTEGRAL_L
 
 pid_ctrl_block_handle_t init_pid(type_side_motor motor);
+esp_err_t apply_pid(pid_ctrl_block_handle_t pid, type_side_motor motor, pcnt_unit_handle_t encoder, float target_vel);
 
 #endif

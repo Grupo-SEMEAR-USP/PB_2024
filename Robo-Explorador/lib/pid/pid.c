@@ -1,14 +1,14 @@
 #include "pid.h"
 
-void teste(){
+// void teste(){
 
-    float error, result; //(inicializar)
-    ESP_ERROR_CHECK(pid_compute(pid, error, &result)); //calcula o resultado do pid na variavel result
+//     float error, result; //(inicializar)
+//     ESP_ERROR_CHECK(pid_compute(pid, error, &result)); //calcula o resultado do pid na variavel result
 
-    ESP_ERROR_CHECK(pid_update_parameters(pid, &pid_param)); //atualiza valores (pid recebe os parametros de pid_param)
+//     ESP_ERROR_CHECK(pid_update_parameters(pid, &pid_param)); //atualiza valores (pid recebe os parametros de pid_param)
 
-    ESP_ERROR_CHECK(pid_reset_ctrl_block(pid)); //reseta valores de erros e output anteriores
-}
+//     ESP_ERROR_CHECK(pid_reset_ctrl_block(pid)); //reseta valores de erros e output anteriores
+// }
 
 pid_ctrl_block_handle_t init_pid(type_side_motor motor){
 
@@ -38,7 +38,7 @@ esp_err_t apply_pid(pid_ctrl_block_handle_t pid, type_side_motor motor, pcnt_uni
     
     //como vai ser aplicado o delay?
     
-    float k; // constante de conversão ticks x rpm
+    float k = 0.02; // constante de conversão ticks x rpm 
     float vel_atual = pulse_count(encoder) * k;
 
     float erro = target_vel - vel_atual;
