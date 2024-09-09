@@ -35,6 +35,6 @@ typedef enum{
 /* Funções */
 pcnt_unit_handle_t init_encoder(type_side_encoder encoder);
 bool pcnt_on_reach(pcnt_unit_handle_t unit, const pcnt_watch_event_data_t *edata, void *user_ctx) ;
-float pulse_count(pcnt_unit_handle_t);
+float pulse_count(pcnt_unit_handle_t encoder);
 
 #endif

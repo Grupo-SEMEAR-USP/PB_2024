@@ -72,7 +72,7 @@ bool pcnt_on_reach(pcnt_unit_handle_t unit, const pcnt_watch_event_data_t *edata
     return (high_task_wakeup == pdTRUE);
 }
 
-// Retorna a quantidade de pulsos lidos em um intervalo de tempo;
+// Retorna a quantidade de pulsos lidos em um intervalo de tempo
 float pulse_count(pcnt_unit_handle_t encoder){
     int pulse_count = 0;
 

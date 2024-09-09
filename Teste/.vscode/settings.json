@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "task.h": "c"
+        "task.h": "c",
+        "encoder.h": "c",
+        "h_bridge.h": "c",
+        "pid.h": "c",
+        "pid_ctrl.h": "c",
+        "esp_log.h": "c"
     }
 }
