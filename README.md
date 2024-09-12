@@ -17,9 +17,6 @@ Este é o repositório do Projeto dos Bixos do núcleo de Robótica Móvel Auton
 
 > O projeto abrange atuações em mecânica, eletrônica e programação, juntas elas devem funcionar em harmonia.
 
-*[Exemplo: Perseverence, robô explorador da Nasa]*
-
-![Perseverence, robô explorador da Nasa](https://s2.glbimg.com/BYR-XBxo73uWsG6s5jsWnZDdlRg=/620x350/e.glbimg.com/og/ed/f/original/2021/02/18/117021449_diana6.jpg)
 
 ## Ferramentas
 
@@ -49,8 +46,6 @@ microcontrolador desenvolvido pela Espressif Systems, amplamente utilizado na in
 A ESP32 possui um pinout flexível, com um grande número de pinos GPIO que podem ser configurados para diferentes funções. alguns exemplos de periféricos são: GPIO, Wi-Fi, Bluetooth, UART, SPI, I2C, ADC, PWM, Interrupção e RTC.
 
 Para a programação da ESP32, utilizaremos o ESP-IDF, na PlatformIO, o qual se trata de um conjunto de ferramentas de desenvolvimento oficial da Espressif Systems, projetado especificamente para programação avançada da família ESP32.
-
-![ESP32](https://cdn.awsli.com.br/78/78150/produto/18299352/placa_esp32_devkit_v1-xgqfiy1x77.png)
 
 ### Rasberry PI
 
