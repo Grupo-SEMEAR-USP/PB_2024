@@ -37,7 +37,7 @@ pid_ctrl_block_handle_t init_pid(type_side_motor motor){
 }
 
 //limites do PWM
-void limit_PWM(float *val, float target_vel){
+void limite_PWM(float *val, float target_vel){
     if(*val > 1023) *val = 1023;
     if(*val < 0 && target_vel >= 0) *val = 0; //se velocidade alvo for positiva
     else if(*val < -1023 && target_vel < 0) *val = -1023; //se for negativa
@@ -55,9 +55,9 @@ esp_err_t pid_apply(float* val_incrementado, pid_ctrl_block_handle_t pid, type_s
     result *= (1/k);
     *val_incrementado += result;
 
-    limite_PWM(&val_incrementado, target_vel);
-    update_motor(motor, val_incrementado);
+    limite_PWM(val_incrementado, target_vel);
+    update_motor(motor, *val_incrementado);
     
-    ESP_LOGI(TAG_PID, "Alvo: %f  Erro: %f  PID: %f\n", target_vel, erro, val_incrementado);
+    ESP_LOGI(TAG_PID, "Alvo: %f  Erro: %f  PID: %f\n", target_vel, erro, *val_incrementado);
     return ESP_OK;
 }

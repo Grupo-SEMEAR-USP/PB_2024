@@ -49,6 +49,6 @@ typedef enum{
 //Funções
 void init_gpio(type_side_motor motor);
 void init_pwm(type_side_motor motor);
-void update_motor(type_side_motor motor, int vel);
+void update_motor(type_side_motor motor, float vel);
 
 #endif

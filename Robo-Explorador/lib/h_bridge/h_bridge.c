@@ -35,7 +35,7 @@ void init_pwm(type_side_motor motor){
 }
 
 /* Seta a velocidade e direção do motor */
-void update_motor(type_side_motor motor, int vel){
+void update_motor(type_side_motor motor, float vel){
     // valor negativo e positivo de vel indicam direções diferentes
     if(vel >= 0){ 
         gpio_set_level(pinPonteH_1(motor), LOW);
