@@ -22,8 +22,8 @@ typedef enum{
 } type_side_motor;
 
 // Pinos Ponte H MOTOR RIGHT
-#define pinPonteH_1R GPIO_NUM_19    
-#define pinPonteH_2R  GPIO_NUM_21
+#define pinPonteH_1R GPIO_NUM_33    //13 esp
+#define pinPonteH_2R  GPIO_NUM_25   //14
 
 // Pinos Ponte H MOTOR LEFT 
 #define pinPonteH_1L GPIO_NUM_27    
@@ -33,8 +33,8 @@ typedef enum{
 #define pinPonteH_2(SIDE) (SIDE == MOTOR_RIGHT)? pinPonteH_2R : pinPonteH_2L
 
 //PWM config
-#define PWM_R GPIO_NUM_18 // motor right
-#define PWM_L GPIO_NUM_13 // motor left
+#define PWM_R GPIO_NUM_13 // motor right
+#define PWM_L GPIO_NUM_18 // motor left
 #define PWM(SIDE) (SIDE == MOTOR_RIGHT)? PWM_R : PWM_L 
 
 #define LEDC_SPEED_MODE LEDC_LOW_SPEED_MODE

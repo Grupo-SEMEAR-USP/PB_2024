@@ -22,7 +22,7 @@ typedef enum{
 #define CHA_B_ENC_R 19
 
 // Canais A e B do encoder da esquerda (L)
-#define CHA_A_ENC_L 18
+#define CHA_A_ENC_L 18 //MUDAR
 #define CHA_B_ENC_L 19
 
 #define ENCODER_CHA_A(SIDE) (SIDE == ENCODER_RIGHT)? CHA_A_ENC_R : CHA_A_ENC_L

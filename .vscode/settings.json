@@ -2,6 +2,7 @@
     "files.associations": {
         "pid_ctrl.h": "c",
         "encoder.h": "c",
-        "h_bridge.h": "c"
+        "h_bridge.h": "c",
+        "pid.h": "c"
     }
 }

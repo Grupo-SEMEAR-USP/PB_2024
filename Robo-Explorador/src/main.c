@@ -3,6 +3,9 @@
 #include "pid.h"
 #include "pid_ctrl.h"
 
+pid_ctrl_block_handle_t pid_right, pid_left;
+pcnt_unit_handle_t encoderR, encoderL;
+
 void testePWM(type_side_motor motor){
     int maxRes = 1023; //valor do duty cycle em 100%
 
@@ -37,44 +40,39 @@ void testePWM(type_side_motor motor){
     }
 }
 
-void testeEncoder(pcnt_unit_handle_t encoder){
-    /* Loop para testa o encoder */
-    while(1){
-        //update_motor(MOTOR_RIGHT, maxRes);
-        vTaskDelay(60 / portTICK_PERIOD_MS); 
-        pulse_count(encoder); //qtde de pulso a cada 60ms
-    }
+void init_all(){
+    init_gpio(MOTOR_RIGHT);
+    //init_gpio(MOTOR_LEFT);
+
+    init_pwm(MOTOR_RIGHT);
+    //init_pwm(MOTOR_LEFT);
+    
+    pid_right =  init_pid(MOTOR_RIGHT);
+    //pid_left = init_pid(MOTOR_LEFT);
+
+    encoderR = init_encoder(ENCODER_RIGHT);
+    //encoderL = init_encoder(ENCODER_LEFT);
 }
 
 void app_main() {
-    init_gpio(MOTOR_RIGHT);
-    init_pwm(MOTOR_RIGHT);
+    init_all();
 
-    pcnt_unit_handle_t encoderR = init_encoder(ENCODER_RIGHT);
-    pcnt_unit_handle_t encoderL = init_encoder(ENCODER_LEFT);
+    //TESTE ENCODER VS PWM
+    // while(true){
+    //     update_motor(MOTOR_RIGHT, 500); //testa leitura do encoder com 500 no pwm
+    //     vTaskDelay(500 / portTICK_PERIOD_MS);
+    //     for(int i=0; i<15; i++){
+    //         pulse_count(encoderR);   // cerca de 90
+    //     }
+    //     update_motor(MOTOR_RIGHT, 1023); //testa com 1023
+    //     vTaskDelay(500 / portTICK_PERIOD_MS);
+    //     for(int i=0; i<15; i++){
+    //         pulse_count(encoderR);   //cerca de 191
+    //     }
+    // }
 
-    
-    /*PID*/
-    //Pseudo Código:
-    /*
-        error_prior = 0
-        integral_prior = 0
-        KP = ?
-        KI = ?
-        KD = ?
-        bias = ? (evita que o output seja 0)
-
-        while(1) {
-            error = desired_value – actual_value
-            integral = integral_prior + error * iteration_time
-            derivative = (error – error_prior) / iteration_time
-            output = KP*error + KI*integral + KD*derivative + bias
-            error_prior = error
-            integral_prior = integral
-            sleep(iteration_time) (delay?)
-        }
-    */
-
-   
-
+    float valpid = 0;
+    while (1){
+        pid_apply(&valpid, pid_right, MOTOR_RIGHT, encoderR, 120);
+    }
 }
