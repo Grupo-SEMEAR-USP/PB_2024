@@ -12,6 +12,16 @@ Este é o repositório do Projeto dos Bixos do núcleo de Robótica Móvel Auton
 ### Objetivos do robô:
 Deslocar-se de forma terrestre e totalmente autônoma; Explorar o ambiente desconhecido; Ter um sistema de localização minimamente preciso; Não colidir com os objetos; Gerar um mapa em tempo real do ambiente; Encontrar as rotas mais otimizadas ao planejar trajetórias; Ausência de tempo máximo para a exploração.
 
+Conteúdos
+=================
+<!--ts-->
+   * [Ferramentas](##Ferramentas)
+      * [Ubuntu 20.04 LTS](###Ubuntu)
+      * [PlataformIO](###PlataformIO)
+      * [ROS](###ROS)
+   *
+  
+<!--te-->
 
 
 
