@@ -13,7 +13,7 @@ Este é o repositório do Projeto dos Bixos do núcleo de Robótica Móvel Auton
 Deslocar-se de forma terrestre e totalmente autônoma; Explorar o ambiente desconhecido; Ter um sistema de localização minimamente preciso; Não colidir com os objetos; Gerar um mapa em tempo real do ambiente; Encontrar as rotas mais otimizadas ao planejar trajetórias; Ausência de tempo máximo para a exploração.
 
 <h4 align="center"> 
-	🚧  React Select 🚀 Em construção...  🚧
+	🚧  Status do Projeto: Em construção...  🚧
 </h4>
 
 ## Ferramentas
