@@ -6,11 +6,13 @@ Este é o repositório do Projeto dos Bixos do núcleo de Robótica Móvel Auton
 
 **Os códigos utilizados para executar as tarefas e análises do projeto estão documentados neste repositório.**
 
+> O projeto abrange atuações em mecânica, eletrônica e programação, juntas elas devem funcionar em harmonia.
+
+
 ### Objetivos do robô:
 Deslocar-se de forma terrestre e totalmente autônoma; Explorar o ambiente desconhecido; Ter um sistema de localização minimamente preciso; Não colidir com os objetos; Gerar um mapa em tempo real do ambiente; Encontrar as rotas mais otimizadas ao planejar trajetórias; Ausência de tempo máximo para a exploração.
 
 
-> O projeto abrange atuações em mecânica, eletrônica e programação, juntas elas devem funcionar em harmonia.
 
 
 ## Ferramentas
