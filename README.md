@@ -16,28 +16,29 @@ Deslocar-se de forma terrestre e totalmente autônoma; Explorar o ambiente desco
 	🚧  Status do Projeto: Em construção...  🚧
 </h4>
 
-## Ferramentas
 
-### Ubuntu 20.04 LTS
+## Ferramentas 
+
+### 💻 Ubuntu 20.04 LTS
 A instalação desta distro do Linux é muito importante devido à sua grande compatibilidade com as ferramentas ROS (Robot Operating System) e o ESP-IDF (Espressif IoT Development Framework), as quais são essênciais para o nosso projeto.
 
 Para baixar, acesse o link [Ubuntu](https://ubuntu.com/download)
 
-### PlataformIO
+### 👽 PlataformIO
 PlatformIO é uma plataforma de desenvolvimento de código aberto para programação de microcontroladores e sistemas embarcados. Ela suporta uma ampla gama de placas e frameworks, facilitando a compilação e o upload de códigos para diferentes dispositivos, incluindo ESP32 que utilizamos em nossos projetos.
 
 A PlataformIO é instalada com a extensão PlatformIO IDE através do Marketplace do Visual Studio Code. Após instalar, basta criar um novo projeto e selecionar a DOIT ESP32 DEVKIT V1 como Board e Espdif como Framework e finalizar. Assim, o projeto para a criação, compilação e testes dos códigos estará pronto. 
 
 [Documentação PlataforIO](https://docs.platformio.org/en/latest/)
 
-### ROS
+### 👨‍💻 ROS
 ROS é um conjunto de bibliotecas e ferramentas que te ajudam na construção de aplicações para robôs. De drivers até algoritmos de última geração e com poderosas ferramentas de desenvolvimento, ROS possui o que você precisa para seu projeto de robótica. E o melhor de tudo: ROS é OpenSource.
 
 [Documentação ROS](https://docs.ros.org/)
 
 ## Microcontroladores
 
-### ESP32
+### 💡 ESP32
 microcontrolador desenvolvido pela Espressif Systems, amplamente utilizado na indústria de Internet das Coisas (IoT) devido às suas capacidades de processamento, conectividade e periféricos integrados. Suas principais características são:
 - Dual-core: Equipado com dois núcleos Tensilica Xtensa® 32-bit LX6, permitindo multitarefa eficiente e performance aprimorada, com frequência de operação configurável até 240 MHz.
 - Conectividade: Oferece suporte integrado para Wi-Fi e Bluetooth, facilitando a construção de projetos de IoT com conexões sem fio robustas.
@@ -46,7 +47,7 @@ A ESP32 possui um pinout flexível, com um grande número de pinos GPIO que pode
 
 Para a programação da ESP32, utilizaremos o ESP-IDF, na PlatformIO, o qual se trata de um conjunto de ferramentas de desenvolvimento oficial da Espressif Systems, projetado especificamente para programação avançada da família ESP32.
 
-### Rasberry PI
+### 🍒 Rasberry PI
 
 
 
