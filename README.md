@@ -1,6 +1,7 @@
 # PB_2024
 
 ### [RMA] Projeto dos Bixos 2024 - SEMEAR
+<h1 align="center">Nome do Projeto</h1>
 Este é o repositório do Projeto dos Bixos do núcleo de Robótica Móvel Autonoma [RMA] do grupo SEMEAR, vinculado à Universidade de São Paulo. Nosso time tem o objetivo de construir um robô autônomo de reconhecimento de áreas, também conhecido como robô explorador. 
 
   **Os códigos utilizados para executar as tarefas e análises do projeto estão documentados neste repositório.**
