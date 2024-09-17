@@ -31,8 +31,6 @@ PlatformIO é uma plataforma de desenvolvimento de código aberto para programa�
 
 A PlataformIO é instalada com a extensão PlatformIO IDE através do Marketplace do Visual Studio Code. Após instalar, basta criar um novo projeto e selecionar a DOIT ESP32 DEVKIT V1 como Board e Espdif como Framework e finalizar. Assim, o projeto para a criação, compilação e testes dos códigos estará pronto. 
 
-![PlataformIO](https://files.seeedstudio.com/wiki/platformIO/platformIO-2.png)
-
 ### ROS
 
 ## Microcontroladores
