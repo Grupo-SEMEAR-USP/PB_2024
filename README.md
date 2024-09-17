@@ -2,12 +2,12 @@
 <h1 align="center">[RMA] Projeto dos Bixos 2024 - SEMEAR</h1>
 
 
-### Este é o repositório do Projeto dos Bixos do núcleo de Robótica Móvel Autonoma [RMA] do grupo SEMEAR, vinculado à Universidade de São Paulo. Nosso time tem o objetivo de construir um robô autônomo de reconhecimento de áreas, também conhecido como robô explorador.
+Este é o repositório do Projeto dos Bixos do núcleo de Robótica Móvel Autonoma [RMA] do grupo SEMEAR, vinculado à Universidade de São Paulo. Nosso time tem o objetivo de construir um robô autônomo de reconhecimento de áreas, também conhecido como robô explorador.
 
 **Os códigos utilizados para executar as tarefas e análises do projeto estão documentados neste repositório.**
 
 ### Objetivos do robô:
-Deslocar-se de forma terrestre e totalmente autônoma; Explorar o ambiente desconhecido; Ter um sistema de localização minimamente preciso; Não colidir com os objetos; Gerar um mapa em tempo real do ambiente; Encontrar as rotas mais otimizadas ao planejar trajetórias. Ausência de tempo máximo para a exploração.
+Deslocar-se de forma terrestre e totalmente autônoma; Explorar o ambiente desconhecido; Ter um sistema de localização minimamente preciso; Não colidir com os objetos; Gerar um mapa em tempo real do ambiente; Encontrar as rotas mais otimizadas ao planejar trajetórias; Ausência de tempo máximo para a exploração.
 
 
 > O projeto abrange atuações em mecânica, eletrônica e programação, juntas elas devem funcionar em harmonia.
@@ -25,11 +25,14 @@ PlatformIO é uma plataforma de desenvolvimento de código aberto para programa�
 
 A PlataformIO é instalada com a extensão PlatformIO IDE através do Marketplace do Visual Studio Code. Após instalar, basta criar um novo projeto e selecionar a DOIT ESP32 DEVKIT V1 como Board e Espdif como Framework e finalizar. Assim, o projeto para a criação, compilação e testes dos códigos estará pronto. 
 
+[Documentação PlataforIO](https://docs.platformio.org/en/latest/)
+
 ### ROS
+ROS é um conjunto de bibliotecas e ferramentas que te ajudam na construção de aplicações para robôs. De drivers até algoritmos de última geração e com poderosas ferramentas de desenvolvimento, ROS possui o que você precisa para seu projeto de robótica. E o melhor de tudo: ROS é OpenSource.
+
+[Documentação ROS](https://docs.ros.org/)
 
 ## Microcontroladores
-
-Microcontroladores são pequenos computadores em um chip, contendo processador, memória e periféricos de I/O. Eles controlam dispositivos automatizados e executam tarefas específicas. Uma característica chave é a comunicação com periféricos externos via GPIOs, permitindo conexão com sensores e atuadores. Além disso, possuem diversas interfaces para interagir com diversos componentes.
 
 ### ESP32
 microcontrolador desenvolvido pela Espressif Systems, amplamente utilizado na indústria de Internet das Coisas (IoT) devido às suas capacidades de processamento, conectividade e periféricos integrados. Suas principais características são:
