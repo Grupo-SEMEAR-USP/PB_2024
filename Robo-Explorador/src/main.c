@@ -56,6 +56,11 @@ void init_all(){
 
 void app_main() {
     init_all();
+    FILE *fp = fopen("plotar-grafico/valores.txt","w");
+    if (fp == NULL) {
+        printf("no such file.");
+        return 0;
+    }
 
     //TESTE ENCODER VS PWM
     // while(true){
@@ -73,6 +78,6 @@ void app_main() {
 
     float valpid = 0;
     while (1){
-        pid_apply(&valpid, pid_right, MOTOR_RIGHT, encoderR, 120);
+        pid_apply(fp, &valpid, pid_right, MOTOR_RIGHT, encoderR, 120);
     }
 }

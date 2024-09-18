@@ -43,10 +43,13 @@ void limite_PWM(float *val, float target_vel){
     else if(*val < -1023 && target_vel < 0) *val = -1023; //se for negativa
 }
 
-esp_err_t pid_apply(float* val_incrementado, pid_ctrl_block_handle_t pid, type_side_motor motor, pcnt_unit_handle_t encoder, float target_vel){
+esp_err_t pid_apply(FILE *fp, float* val_incrementado, pid_ctrl_block_handle_t pid, type_side_motor motor, pcnt_unit_handle_t encoder, float target_vel){
     
     float k = 1; // constante de conversão ticks x rpm 
     float vel_atual = pulse_count(encoder) * k; //delay de 50ms
+    
+    fprintf(fp, "%f ", vel_atual); // manda o valor da velocidade para o arquivo (adicionar um limite ou delay?)
+
     float erro = target_vel - vel_atual;
 
     //calcula e aplica pid

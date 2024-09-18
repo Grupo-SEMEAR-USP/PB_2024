@@ -32,6 +32,6 @@
 #define min_integral(SIDE) (SIDE == MOTOR_RIGHT)? MIN_INTEGRAL_R : MIN_INTEGRAL_L
 
 pid_ctrl_block_handle_t init_pid(type_side_motor motor);
-esp_err_t pid_apply(float* val_incrementado, pid_ctrl_block_handle_t pid, type_side_motor motor, pcnt_unit_handle_t encoder, float target_vel);
+esp_err_t pid_apply(FILE *fp, float* val_incrementado, pid_ctrl_block_handle_t pid, type_side_motor motor, pcnt_unit_handle_t encoder, float target_vel);
 
 #endif

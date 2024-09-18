@@ -2,6 +2,11 @@
     "files.associations": {
         "pid_ctrl.h": "c",
         "pid.h": "c",
-        "encoder.h": "c"
+        "encoder.h": "c",
+        "glut.h": "c",
+        "freeglut_std.h": "c",
+        "gl.h": "c",
+        "glext.h": "c",
+        "math.h": "c"
     }
 }
