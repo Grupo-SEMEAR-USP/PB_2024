@@ -9,6 +9,9 @@
 #define UART_PORT_NUM UART_NUM_1
 #define BUF_SIZE (1024)
 
+int x = 1; // Velocidade do motor 1
+int y = 2; // Velocidade do motor 2
+
 static const char *TAG = "UART_ESP32";
 
 void uart_init() {
@@ -32,15 +35,16 @@ void uart_init() {
 }
 
 void send_data() {
-    int motor_speed = 120;  // Velocidade do motor a ser enviada
-    char data_to_send[10];
-    
-    // Converte o número para string
-    snprintf(data_to_send, sizeof(data_to_send), "%d", motor_speed);
+    int motor_speed1 = x;  // Velocidade do motor 1
+    int motor_speed2 = y;  // Velocidade do motor 2
+    char data_to_send[20]; // [20] é o tamanho do buffer para suportar os dois valores
+
+    // Concatena as duas velocidades em uma string, separadas por vírgula
+    snprintf(data_to_send, sizeof(data_to_send), "%d,%d\n", motor_speed1, motor_speed2);
     
     // Envia os dados pela UART
     uart_write_bytes(UART_PORT_NUM, data_to_send, strlen(data_to_send));
-    ESP_LOGI(TAG, "Número enviado para Raspberry Pi: %s", data_to_send);
+    ESP_LOGI(TAG, "Dados enviados para Raspberry Pi: %s", data_to_send);
 }
 
 void app_main(void) {
@@ -48,7 +52,7 @@ void app_main(void) {
     uart_init();
     
     while (1) {
-        // Envia o dado a cada 2 segundos
+        // Envia os dados a cada 20ms
         send_data();
         vTaskDelay(20 / portTICK_PERIOD_MS);
     }
