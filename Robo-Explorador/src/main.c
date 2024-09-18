@@ -2,6 +2,7 @@
 #include "encoder.h"
 #include "pid.h"
 #include "pid_ctrl.h"
+#include <stdlib.h>
 
 pid_ctrl_block_handle_t pid_right, pid_left;
 pcnt_unit_handle_t encoderR, encoderL;
@@ -56,10 +57,10 @@ void init_all(){
 
 void app_main() {
     init_all();
-    FILE *fp = fopen("plotar-grafico/valores.txt","w");
+    FILE *fp = fopen("/home/beatriz/Desktop/Codigos/Repos/PB_2024/Robo-Explorador/plotar-grafico/valores.txt","w"); //verificar caminho do arquivo
     if (fp == NULL) {
         printf("no such file.");
-        return 0;
+        exit(1);
     }
 
     //TESTE ENCODER VS PWM

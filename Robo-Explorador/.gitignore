@@ -4,3 +4,4 @@
 .vscode/launch.json
 .vscode/ipch
 **/ESP32_slave1/
+**/*.o

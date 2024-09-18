@@ -48,7 +48,7 @@ esp_err_t pid_apply(FILE *fp, float* val_incrementado, pid_ctrl_block_handle_t p
     float k = 1; // constante de conversão ticks x rpm 
     float vel_atual = pulse_count(encoder) * k; //delay de 50ms
     
-    fprintf(fp, "%f ", vel_atual); // manda o valor da velocidade para o arquivo (adicionar um limite ou delay?)
+    fprintf(fp, "%.2f ", vel_atual); // manda o valor da velocidade para o arquivo (adicionar um limite ou delay?)
 
     float erro = target_vel - vel_atual;
 
