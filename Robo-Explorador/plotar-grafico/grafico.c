@@ -1,10 +1,12 @@
 #include <GL/glut.h>
 #include <math.h>
 #include <stdio.h>
+#include <string.h>
 
 // tamanho da janela do gráfico
 #define WIDTH 1200
 #define HEIGHT 1200
+#define MAX_LINE_LENGTH 256
 
 // limites do gráfico
 #define LIM_ESQ -5.0
@@ -92,10 +94,23 @@ FILE *fp;
 
 // Função que será plotada
 float funcao() {
-    float a;
-    if(fscanf(fp, "%f", &a) == EOF) return -1; // se alcançar final de arquivo
+    float valor;
+    char linha[MAX_LINE_LENGTH];
+    int posicao_desejada = 27; // Por exemplo, começar a ler a partir do caractere 27
 
-    return a; 
+    if(fgets(linha, sizeof(linha), fp) == NULL) return -1;
+
+    // Verifica se a linha é longa o suficiente
+    if (strlen(linha) > posicao_desejada) {
+
+        // Ajusta o ponteiro para a posição desejada
+        char *p = strstr(linha, "t: ");  // "... Pulse count: {valor} ...", ponteiro começa no "t" e é ajustado para o valor
+        p = p+3;
+    
+        sscanf(p, "%f", &valor);
+        printf("Valor lido: %.2f\n", valor);
+        return valor; 
+    }
 }
 
 // Função para desenhar texto em uma posição
@@ -163,8 +178,8 @@ void desenhaGrafico() {
     glColor3f(0.0, 0.0, 1.0); // Cor azul para o gráfico
     glBegin(GL_LINE_STRIP);
     
-    // Plotando a função até que acabe os elementos do arquivo (y == -1)
-    for (float x = 0.0; ; x += 1) {
+    // Plotando a função com 190 elementos
+    for (float x = 0.0; x < 190; x += 1) {
         float y = funcao(); 
         if(y == -1) break;  
         glVertex2f(x, y);   // Plota o ponto no gráfico
@@ -204,6 +219,7 @@ int main(int argc, char **argv) {
     glutDisplayFunc(display);          // Registra a função de renderização
 
     glutMainLoop();
+    
     fclose(fp);
     
     return 0;

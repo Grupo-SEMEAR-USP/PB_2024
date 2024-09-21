@@ -22,8 +22,8 @@ typedef enum{
 } type_side_motor;
 
 // Pinos Ponte H MOTOR RIGHT
-#define pinPonteH_1R GPIO_NUM_33    //13 esp
-#define pinPonteH_2R  GPIO_NUM_25   //14
+#define pinPonteH_1R GPIO_NUM_25    //13 esp
+#define pinPonteH_2R  GPIO_NUM_33   //14
 
 // Pinos Ponte H MOTOR LEFT 
 #define pinPonteH_1L GPIO_NUM_27    

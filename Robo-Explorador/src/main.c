@@ -7,6 +7,22 @@
 pid_ctrl_block_handle_t pid_right, pid_left;
 pcnt_unit_handle_t encoderR, encoderL;
 
+void encoderXpwm(){
+    //TESTE ENCODER VS PWM
+    while(true){
+        update_motor(MOTOR_RIGHT, 500); //testa leitura do encoder com 500 no pwm
+        vTaskDelay(500 / portTICK_PERIOD_MS);
+        for(int i=0; i<15; i++){
+            pulse_count(encoderR);   // cerca de 90
+        }
+        update_motor(MOTOR_RIGHT, 1023); //testa com 1023
+        vTaskDelay(500 / portTICK_PERIOD_MS);
+        for(int i=0; i<15; i++){
+            pulse_count(encoderR);   //cerca de 191
+        }
+    }
+}
+
 void testePWM(type_side_motor motor){
     int maxRes = 1023; //valor do duty cycle em 100%
 
@@ -57,28 +73,18 @@ void init_all(){
 
 void app_main() {
     init_all();
-    FILE *fp = fopen("/home/beatriz/Desktop/Codigos/Repos/PB_2024/Robo-Explorador/plotar-grafico/valores.txt","w"); //verificar caminho do arquivo
-    if (fp == NULL) {
-        printf("no such file.");
-        exit(1);
-    }
 
-    //TESTE ENCODER VS PWM
-    // while(true){
-    //     update_motor(MOTOR_RIGHT, 500); //testa leitura do encoder com 500 no pwm
-    //     vTaskDelay(500 / portTICK_PERIOD_MS);
-    //     for(int i=0; i<15; i++){
-    //         pulse_count(encoderR);   // cerca de 90
-    //     }
-    //     update_motor(MOTOR_RIGHT, 1023); //testa com 1023
-    //     vTaskDelay(500 / portTICK_PERIOD_MS);
-    //     for(int i=0; i<15; i++){
-    //         pulse_count(encoderR);   //cerca de 191
-    //     }
+    vTaskDelay(5000/portTICK_PERIOD_MS); //delay de 5s para dar tempo de rodar o programa de plotar gráfico
+
+    // float valpid = 0;
+    // while (1){
+    //     pid_apply(&valpid, pid_right, MOTOR_RIGHT, encoderR, 120);
     // }
 
-    float valpid = 0;
-    while (1){
-        pid_apply(fp, &valpid, pid_right, MOTOR_RIGHT, encoderR, 120);
+    // SIMULA OS LOGS DA ESP - TESTE GRAFICO
+    float i=0;
+    while(1){
+        ESP_LOGI("Encoder", "Pulse count: %.2f ", i++);
+        //vTaskDelay(300/portTICK_PERIOD_MS);
     }
 }

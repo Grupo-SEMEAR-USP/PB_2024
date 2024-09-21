@@ -7,6 +7,7 @@
         "freeglut_std.h": "c",
         "gl.h": "c",
         "glext.h": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "freertos.h": "c"
     }
 }
