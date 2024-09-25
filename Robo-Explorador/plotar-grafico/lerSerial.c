@@ -68,7 +68,7 @@ int main() {
     printf("Iniciando leitura da porta serial e salvando em valores.txt...\n");
 
     // Ler da porta serial e escrever no arquivo
-    for(int i=0; i<80; i++) {
+    for(int i=0; i<220; i++) {
         bytes_read = read(serial_fd, buffer, sizeof(buffer) - 1);
         if (bytes_read > 0) {
             buffer[bytes_read] = '\0';  // Adicionar terminação de string

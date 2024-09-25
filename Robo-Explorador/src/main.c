@@ -76,15 +76,12 @@ void app_main() {
 
     vTaskDelay(5000/portTICK_PERIOD_MS); //delay de 5s para dar tempo de rodar o programa de plotar gráfico
 
-    // float valpid = 0;
-    // while (1){
-    //     pid_apply(&valpid, pid_right, MOTOR_RIGHT, encoderR, 120);
-    // }
+    float valpid = 0, setPoint;
+    for(int i=0; i<500; i++){
+        if(i < 80) setPoint = 170;
+        else if(i >= 80 && i < 140) setPoint = 50;
+        else setPoint = 100;
 
-    // SIMULA OS LOGS DA ESP - TESTE GRAFICO
-    float i=0;
-    while(1){
-        ESP_LOGI("Encoder", "Pulse count: %.2f ", i++);
-        //vTaskDelay(300/portTICK_PERIOD_MS);
+        pid_apply(&valpid, pid_right, MOTOR_RIGHT, encoderR, setPoint);
     }
 }
