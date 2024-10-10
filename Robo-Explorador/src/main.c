@@ -13,12 +13,12 @@ void encoderXpwm(){
         update_motor(MOTOR_RIGHT, 500); //testa leitura do encoder com 500 no pwm
         vTaskDelay(500 / portTICK_PERIOD_MS);
         for(int i=0; i<15; i++){
-            pulse_count(encoderR);   // cerca de 90
+            pulse_count(encoderR, ENCODER_RIGHT);   // cerca de 90
         }
         update_motor(MOTOR_RIGHT, 1023); //testa com 1023
         vTaskDelay(500 / portTICK_PERIOD_MS);
         for(int i=0; i<15; i++){
-            pulse_count(encoderR);   //cerca de 191
+            pulse_count(encoderR, ENCODER_RIGHT);   //cerca de 191
         }
     }
 }

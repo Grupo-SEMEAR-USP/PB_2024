@@ -1,5 +1,6 @@
 /* Código para 1 encoder */
 
+#include "utils.h"
 #include "encoder.h"
 
 const char *TAG_ENCODER = "Encoder";
@@ -72,8 +73,11 @@ bool pcnt_on_reach(pcnt_unit_handle_t unit, const pcnt_watch_event_data_t *edata
     return (high_task_wakeup == pdTRUE);
 }
 
+
+// ADAPTAR PARA DOIS MOTORES !!!
+
 // Retorna a quantidade de pulsos lidos em um intervalo de tempo
-float pulse_count(pcnt_unit_handle_t encoder){
+float pulse_count(pcnt_unit_handle_t encoder, type_side_encoder side){
     int pulse_count = 0;
     pcnt_unit_clear_count(encoder); //zera o contador de pulsos
     vTaskDelay(50/portTICK_PERIOD_MS);
@@ -82,6 +86,11 @@ float pulse_count(pcnt_unit_handle_t encoder){
     ESP_LOGI(TAG_ENCODER, "Pulse count: %d", pulse_count);
 
     pcnt_unit_clear_count(encoder); //zera o contador de pulsos
+
+    //(side == 0) ? ENCODER_READ_R = pulse_count : ENCODER_READ_L = pulse_count;
+
+    if(side == ENCODER_RIGHT) ENCODER_READ_R = pulse_count;
+    else ENCODER_READ_L = pulse_count;
 
     return pulse_count;
 }
