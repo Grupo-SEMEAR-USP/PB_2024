@@ -18,12 +18,12 @@ typedef enum{
 } type_side_encoder;
 
 // Canais A e B do encoder da direita (R)
-#define CHA_A_ENC_R 18
-#define CHA_B_ENC_R 19
+#define CHA_A_ENC_R 3
+#define CHA_B_ENC_R 21
 
 // Canais A e B do encoder da esquerda (L)
-#define CHA_A_ENC_L 18 //MUDAR
-#define CHA_B_ENC_L 19
+#define CHA_A_ENC_L 19 
+#define CHA_B_ENC_L 18
 
 #define ENCODER_CHA_A(SIDE) (SIDE == ENCODER_RIGHT)? CHA_A_ENC_R : CHA_A_ENC_L
 #define ENCODER_CHA_B(SIDE) (SIDE == ENCODER_RIGHT)? CHA_B_ENC_R : CHA_B_ENC_L

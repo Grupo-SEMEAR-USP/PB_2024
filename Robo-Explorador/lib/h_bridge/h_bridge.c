@@ -8,7 +8,10 @@ void init_gpio(type_side_motor motor){
 
     gpio_set_direction(PWM(motor), GPIO_MODE_OUTPUT); // pino pwm
     gpio_set_direction(pinPonteH_1(motor), GPIO_MODE_OUTPUT); // pino 1 para a ponte h
-    gpio_set_direction(pinPonteH_2(motor), GPIO_MODE_OUTPUT); // pino 2 para a ponte h 
+    gpio_set_direction(pinPonteH_2(motor), GPIO_MODE_OUTPUT); // pino 2 para a ponte h
+
+    gpio_set_direction(GPIO_NUM_27, GPIO_MODE_OUTPUT); // stand by - sempre HIGH
+    gpio_set_level(GPIO_NUM_27, HIGH);
 }
 
 /* Configura timer e canal PWM */

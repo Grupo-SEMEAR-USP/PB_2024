@@ -58,30 +58,34 @@ void testePWM(type_side_motor motor){
 }
 
 void init_all(){
-    init_gpio(MOTOR_RIGHT);
-    //init_gpio(MOTOR_LEFT);
+    //init_gpio(MOTOR_RIGHT);
+    init_gpio(MOTOR_LEFT);
 
-    init_pwm(MOTOR_RIGHT);
-    //init_pwm(MOTOR_LEFT);
+    //init_pwm(MOTOR_RIGHT);
+    init_pwm(MOTOR_LEFT);
     
-    pid_right =  init_pid(MOTOR_RIGHT);
-    //pid_left = init_pid(MOTOR_LEFT);
+    //pid_right =  init_pid(MOTOR_RIGHT);
+    pid_left = init_pid(MOTOR_LEFT);
 
-    encoderR = init_encoder(ENCODER_RIGHT);
-    //encoderL = init_encoder(ENCODER_LEFT);
+    //encoderR = init_encoder(ENCODER_RIGHT);
+    encoderL = init_encoder(ENCODER_LEFT);
 }
 
 void app_main() {
     init_all();
 
-    vTaskDelay(5000/portTICK_PERIOD_MS); //delay de 5s para dar tempo de rodar o programa de plotar gráfico
+    //vTaskDelay(5000/portTICK_PERIOD_MS); //delay de 5s para dar tempo de rodar o programa de plotar gráfico
 
-    float valpid = 0, setPoint;
-    for(int i=0; i<500; i++){
-        if(i < 80) setPoint = 170;
-        else if(i >= 80 && i < 140) setPoint = 50;
-        else setPoint = 100;
+    float valpidR = 0, valpidL = 0, setPoint = 1023, i=0;
+    while(true)
+    {
+        // if(i < 1000) setPoint = 170;
+        // else if(i >= 1000 && i < 2000) setPoint = 50;
+        // else setPoint = 100;
 
-        pid_apply(&valpid, pid_right, MOTOR_RIGHT, encoderR, setPoint);
+        //pid_apply(&valpidR, pid_right, MOTOR_RIGHT, encoderR, setPoint);
+        pid_apply(&valpidL, pid_left, MOTOR_LEFT, encoderL, setPoint);
+        // i++;
+        // if(i == 5000) i = 0;
     }
 }
