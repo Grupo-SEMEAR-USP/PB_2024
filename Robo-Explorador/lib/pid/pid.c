@@ -12,7 +12,7 @@ pid_ctrl_block_handle_t init_pid(type_side_motor motor){
         .min_output = min_output(motor),
         .max_integral = max_integral(motor),
         .min_integral = min_integral(motor),
-        .cal_type = PID_CAL_TYPE_INCREMENTAL //(ou incremental?)
+        .cal_type = PID_CAL_TYPE_INCREMENTAL 
     };
 
     pid_ctrl_config_t pid_config = {
@@ -26,10 +26,10 @@ pid_ctrl_block_handle_t init_pid(type_side_motor motor){
     return pid;
 }
 
-//limites do PWM
+// Limita o valor do PWM em -1023 a 1023
 void limite_PWM(float *val, float target_vel){
     if(*val > 1023) *val = 1023;
-    if(*val < 0 && target_vel >= 0) *val = 0; //se velocidade alvo for positiva
+    else if(*val < 0 && target_vel >= 0) *val = 0; //se velocidade alvo for positiva
     else if(*val < -1023 && target_vel < 0) *val = -1023; //se for negativa
 }
 
@@ -37,8 +37,8 @@ esp_err_t pid_apply(float* val_incrementado, pid_ctrl_block_handle_t pid, type_s
     
     type_side_encoder side = (motor == MOTOR_RIGHT)? ENCODER_RIGHT : ENCODER_LEFT; 
 
-    float k = 1; // constante de conversão ticks x rpm 
-    float vel_atual = (float)pulse_count(encoder, side) * k; //delay de 50ms
+    float k = 1; // constante de conversão ticks x rpm (a definir)
+    float vel_atual = (float)pulse_count(encoder, side) * k; // (delay de 50ms)
 
     float erro = target_vel - vel_atual;
     

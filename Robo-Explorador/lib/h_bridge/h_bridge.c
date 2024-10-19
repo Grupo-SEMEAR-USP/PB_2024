@@ -10,8 +10,8 @@ void init_gpio(type_side_motor motor){
     gpio_set_direction(pinPonteH_1(motor), GPIO_MODE_OUTPUT); // pino 1 para a ponte h
     gpio_set_direction(pinPonteH_2(motor), GPIO_MODE_OUTPUT); // pino 2 para a ponte h
 
-    gpio_set_direction(GPIO_NUM_27, GPIO_MODE_OUTPUT); // stand by - sempre HIGH
-    gpio_set_level(GPIO_NUM_27, HIGH);
+    gpio_set_direction(pinStandBy, GPIO_MODE_OUTPUT); // stand by - sempre HIGH
+    gpio_set_level(pinStandBy, HIGH);
 }
 
 /* Configura timer e canal PWM */
@@ -51,4 +51,40 @@ void update_motor(type_side_motor motor, float vel){
     }
     ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, vel);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
+}
+
+// Função teste - aplica diferentes valores de PWM nas duas direções
+void testePWM(type_side_motor motor){
+    int maxRes = 1023; //valor do duty cycle em 100%
+    int step = 100; // incremento do PWM
+
+    /* Loop para testar o pwm */
+    while(1){ 
+
+        //DIREÇÃO 1
+        for(int i=0; i<=maxRes; i+= step){    // varia de 0 a 1023
+            update_motor(motor, i);
+            vTaskDelay(500 / portTICK_PERIOD_MS);
+        }
+        vTaskDelay(500 / portTICK_PERIOD_MS);
+
+        for(int i=maxRes; i>=0; i-= step){    // varia de 1023 a 0
+            update_motor(motor, i);
+            vTaskDelay(500 / portTICK_PERIOD_MS);
+        }
+        vTaskDelay(500 / portTICK_PERIOD_MS);
+
+        //DIREÇÃO 2
+        for(int i=0; i>=-maxRes; i-= step){   //varia de 0 a -1023
+            update_motor(motor, i);
+            vTaskDelay(500 / portTICK_PERIOD_MS);
+        }
+        vTaskDelay(500 / portTICK_PERIOD_MS);
+
+        for(int i=-maxRes; i<=0; i+= step){   //varia de -1023 a 0
+            update_motor(motor, i);
+            vTaskDelay(500 / portTICK_PERIOD_MS);
+        }
+        vTaskDelay(500 / portTICK_PERIOD_MS);
+    }
 }

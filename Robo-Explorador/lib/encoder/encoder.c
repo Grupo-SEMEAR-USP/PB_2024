@@ -73,9 +73,6 @@ bool pcnt_on_reach(pcnt_unit_handle_t unit, const pcnt_watch_event_data_t *edata
     return (high_task_wakeup == pdTRUE);
 }
 
-
-// ADAPTAR PARA DOIS MOTORES !!!
-
 // Retorna a quantidade de pulsos lidos em um intervalo de tempo
 float pulse_count(pcnt_unit_handle_t encoder, type_side_encoder side){
     int pulse_count = 0;
@@ -86,8 +83,6 @@ float pulse_count(pcnt_unit_handle_t encoder, type_side_encoder side){
     ESP_LOGI(TAG_ENCODER, "Pulse count: %d", pulse_count);
 
     pcnt_unit_clear_count(encoder); //zera o contador de pulsos
-
-    //(side == 0) ? ENCODER_READ_R = pulse_count : ENCODER_READ_L = pulse_count;
 
     if(side == ENCODER_RIGHT) ENCODER_READ_R = pulse_count;
     else ENCODER_READ_L = pulse_count;

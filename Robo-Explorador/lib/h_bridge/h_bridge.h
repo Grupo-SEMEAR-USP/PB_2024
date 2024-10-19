@@ -21,6 +21,9 @@ typedef enum{
     MOTOR_LEFT = 1,
 } type_side_motor;
 
+// Pino Stand by
+#define pinStandBy GPIO_NUM_27
+
 // Pinos Ponte H MOTOR RIGHT
 #define pinPonteH_1R GPIO_NUM_25    
 #define pinPonteH_2R  GPIO_NUM_26   
@@ -50,5 +53,7 @@ typedef enum{
 void init_gpio(type_side_motor motor);
 void init_pwm(type_side_motor motor);
 void update_motor(type_side_motor motor, float vel);
+
+void testePWM(type_side_motor motor)
 
 #endif
