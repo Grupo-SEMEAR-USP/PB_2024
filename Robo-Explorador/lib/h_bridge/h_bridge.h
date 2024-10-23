@@ -54,6 +54,6 @@ void init_gpio(type_side_motor motor);
 void init_pwm(type_side_motor motor);
 void update_motor(type_side_motor motor, float vel);
 
-void testePWM(type_side_motor motor)
+void testePWM(type_side_motor motor);
 
 #endif
