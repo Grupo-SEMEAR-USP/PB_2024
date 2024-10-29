@@ -21,24 +21,41 @@ typedef enum{
     MOTOR_LEFT = 1,
 } type_side_motor;
 
+// ------------- Placa Beatriz ------------------
 // Pino Stand by
 #define pinStandBy GPIO_NUM_27
 
-// Pinos Ponte H MOTOR RIGHT
+// Pinos Ponte H MOTOR RIGHT    / A
 #define pinPonteH_1R GPIO_NUM_25    
 #define pinPonteH_2R  GPIO_NUM_26   
 
-// Pinos Ponte H MOTOR LEFT 
+// Pinos Ponte H MOTOR LEFT     / B
 #define pinPonteH_1L GPIO_NUM_12    
 #define pinPonteH_2L  GPIO_NUM_14
 
+//PWM config
+#define PWM_R GPIO_NUM_33 // motor right    / A
+#define PWM_L GPIO_NUM_13 // motor left     / B
+
+// ------------- Placa Guilherme ------------------
+// // Pino Stand by
+// #define pinStandBy GPIO_NUM_17
+
+// // Pinos Ponte H MOTOR RIGHT    / 2
+// #define pinPonteH_1R GPIO_NUM_4    
+// #define pinPonteH_2R  GPIO_NUM_16   
+
+// // Pinos Ponte H MOTOR LEFT     / 1
+// #define pinPonteH_1L GPIO_NUM_5    
+// #define pinPonteH_2L  GPIO_NUM_18
+
+// //PWM config
+// #define PWM_R GPIO_NUM_2 // motor right   / 2
+// #define PWM_L GPIO_NUM_19 // motor left   / 1
+
+#define PWM(SIDE) (SIDE == MOTOR_RIGHT)? PWM_R : PWM_L 
 #define pinPonteH_1(SIDE) (SIDE == MOTOR_RIGHT)? pinPonteH_1R : pinPonteH_1L
 #define pinPonteH_2(SIDE) (SIDE == MOTOR_RIGHT)? pinPonteH_2R : pinPonteH_2L
-
-//PWM config
-#define PWM_R GPIO_NUM_33 // motor right
-#define PWM_L GPIO_NUM_13 // motor left
-#define PWM(SIDE) (SIDE == MOTOR_RIGHT)? PWM_R : PWM_L 
 
 #define LEDC_SPEED_MODE LEDC_LOW_SPEED_MODE
 #define LEDC_TIMER LEDC_TIMER_0

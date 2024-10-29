@@ -49,8 +49,8 @@ void update_motor(type_side_motor motor, float vel){
         gpio_set_level(pinPonteH_2(motor), LOW);
         vel = -vel;
     }
-    ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, vel);
-    ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
+    ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL(motor), vel);
+    ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL(motor));
 }
 
 // Função teste - aplica diferentes valores de PWM nas duas direções
