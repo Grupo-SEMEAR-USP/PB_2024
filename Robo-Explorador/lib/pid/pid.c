@@ -35,7 +35,6 @@ void limite_PWM(float *val, float target_vel){
 
 esp_err_t pid_apply(float* val_incrementado, pid_ctrl_block_handle_t pid, type_side_motor motor, pcnt_unit_handle_t encoder, float target_vel){
     
-    // é pra ter resolvido o problema do encoder nas plaquinhas
     type_side_encoder side = ((motor == MOTOR_RIGHT)? ENCODER_RIGHT : ENCODER_LEFT); 
 
     float k = 1; // constante de conversão ticks x rpm (a definir)

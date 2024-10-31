@@ -35,8 +35,6 @@ void init_all(){
     init_pwm(MOTOR_RIGHT);
     init_pwm(MOTOR_LEFT);
 
-    uart_init();
-    
     pid_right =  init_pid(MOTOR_RIGHT);
     pid_left = init_pid(MOTOR_LEFT);
 
@@ -47,7 +45,7 @@ void init_all(){
 void app_main() {
     init_all();
 
-    //vTaskDelay(5000/portTICK_PERIOD_MS); //delay de 5s para dar tempo de rodar o programa de plotar gráfico
+    vTaskDelay(5000/portTICK_PERIOD_MS); //delay de 5s para dar tempo de rodar o programa de plotar gráfico
 
     // float valpidR = 0, valpidL = 0, setPoint = 1023, i=0;
     while(1)
@@ -56,8 +54,12 @@ void app_main() {
         // else if(i >= 1000 && i < 2000) setPoint = 50;
         // else setPoint = 100;
         // receive_data(); 
-        ESP_LOGI(TAG, "oi\n");
-        // vTaskDelay(100 / portTICK_PERIOD_MS);  // Atraso de 2 segundos
+        vTaskDelay(100 / portTICK_PERIOD_MS);  // Atraso de 2 segundos
+        update_motor(MOTOR_RIGHT, 1023);
+        update_motor(MOTOR_LEFT, 1023);
+
+        pulse_count(encoderR, ENCODER_RIGHT);
+        pulse_count(encoderL, ENCODER_LEFT);
 
         //pid_apply(&valpidR, pid_right, MOTOR_RIGHT, encoderR, setPoint);
         //pid_apply(&valpidL, pid_left, MOTOR_LEFT, encoderL, setPoint);
