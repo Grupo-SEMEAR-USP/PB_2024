@@ -6,7 +6,6 @@
 #include "h_bridge.h"
 #include "esp_err.h"
 
-// (Atualizar parâmetros)
 #define KP_R 1
 #define KI_R 0
 #define KD_R 0
@@ -15,11 +14,11 @@
 #define MAX_INTEGRAL_R 100000  //limita a range da soma dos erros (só importa se usar PID_CAL_TYPE_POSITIONAL)
 #define MIN_INTEGRAL_R 0
 
-#define KP_L 0.1
+#define KP_L 1
 #define KI_L 0
 #define KD_L 0
-#define MAX_OUTPUT_L 2046
-#define MIN_OUTPUT_L 0
+#define MAX_OUTPUT_L 1023
+#define MIN_OUTPUT_L -1023
 #define MAX_INTEGRAL_L 100000 
 #define MIN_INTEGRAL_L 0
 

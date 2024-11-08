@@ -5,9 +5,7 @@
 #include "uart_esp32_read.h"
 #include <stdlib.h>
 
-
 static const char *TAG = "TESTE";
-
 
 pid_ctrl_block_handle_t pid_right, pid_left;
 pcnt_unit_handle_t encoderR, encoderL;
@@ -45,9 +43,9 @@ void init_all(){
 void app_main() {
     init_all();
 
-    vTaskDelay(5000/portTICK_PERIOD_MS); //delay de 5s para dar tempo de rodar o programa de plotar gráfico
+    //vTaskDelay(5000/portTICK_PERIOD_MS); //delay de 5s para dar tempo de rodar o programa de plotar gráfico
 
-    // float valpidR = 0, valpidL = 0, setPoint = 1023, i=0;
+    float valpidR = 0, valpidL = 0, setPoint = 1023, i=0;
     while(1)
     {
         // if(i < 1000) setPoint = 170;
@@ -61,8 +59,8 @@ void app_main() {
         pulse_count(encoderR, ENCODER_RIGHT);
         pulse_count(encoderL, ENCODER_LEFT);
 
-        //pid_apply(&valpidR, pid_right, MOTOR_RIGHT, encoderR, setPoint);
-        //pid_apply(&valpidL, pid_left, MOTOR_LEFT, encoderL, setPoint);
+        // pid_apply(&valpidR, pid_right, MOTOR_RIGHT, encoderR, setPoint);
+        // pid_apply(&valpidL, pid_left, MOTOR_LEFT, encoderL, setPoint);
         // i++;
         // if(i == 5000) i = 0;
     }

@@ -84,6 +84,7 @@ float pulse_count(pcnt_unit_handle_t encoder, type_side_encoder side){
 
     pcnt_unit_clear_count(encoder); //zera o contador de pulsos
 
+    // Atualiza variáveis globais
     if(side == ENCODER_RIGHT) ENCODER_READ_R = pulse_count;
     else ENCODER_READ_L = pulse_count;
 
