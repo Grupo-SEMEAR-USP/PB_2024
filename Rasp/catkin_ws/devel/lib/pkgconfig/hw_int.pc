@@ -1,0 +1,8 @@
+prefix=/home/beatriz/Desktop/Codigos/Repos/PB_2024/Rasp/catkin_ws/devel
+
+Name: hw_int
+Description: Description of hw_int
+Version: 0.0.0
+Cflags: -I/home/beatriz/Desktop/Codigos/Repos/PB_2024/Rasp/catkin_ws/devel/include -I/home/beatriz/Desktop/Codigos/Repos/PB_2024/Rasp/catkin_ws/src/hw_int/include
+Libs: -L${prefix}/lib -lhw_int
+Requires: roscpp rospy message_runtime controller_manager

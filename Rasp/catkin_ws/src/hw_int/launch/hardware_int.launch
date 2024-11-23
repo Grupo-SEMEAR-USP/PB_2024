@@ -1,0 +1,3 @@
+<launch>
+<node name="hardware_int" pkg="hw_int" type="hardware_int" output="screen"/>
+</launch>

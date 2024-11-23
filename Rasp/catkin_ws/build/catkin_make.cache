@@ -1,0 +1,2 @@
+hw_int
+-DCATKIN_DEVEL_PREFIX=/home/beatriz/Desktop/Codigos/Repos/PB_2024/Rasp/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/beatriz/Desktop/Codigos/Repos/PB_2024/Rasp/catkin_ws/install -G Unix Makefiles
