@@ -51,6 +51,6 @@ esp_err_t pid_apply(float* val_incrementado, pid_ctrl_block_handle_t pid, type_s
     limite_PWM(val_incrementado, target_vel);
     update_motor(motor, *val_incrementado);
     
-    //ESP_LOGI(TAG_PID, "Alvo: %f  Erro: %f  PID: %f\n", target_vel, erro, *val_incrementado);
+    ESP_LOGI(TAG_PID, "Alvo: %f  Erro: %f  PID: %f\n", target_vel, erro, *val_incrementado);
     return ESP_OK;
 }
