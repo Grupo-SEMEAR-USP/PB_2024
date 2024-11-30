@@ -2,3 +2,5 @@
 .vscode
 **/ESP32_slave1/
 **/*.o
+/Rasp/catkin_ws/build
+/Rasp/catkin_ws/devel

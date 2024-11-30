@@ -11,10 +11,10 @@ void Robot_HW_INT::init()
 {
     /* Subscrito no tópico do encoder e cmd_vel (recebe velocidade alvo em Twist)
        Publica nos tópicos de velocidade (rad/s) e de odometria */
-    // sub_ = nh_.subscribe("/encoder_data", 100, &Robot_HW_INT::encoderCallback, this);
-    sub_ = nh_.subscribe("/cmd_vel", 100, &Robot_HW_INT::cmdCallback, this);
+    sub_encoder = nh_.subscribe("/encoder_data", 100, &Robot_HW_INT::encoderCallback, this);
+    sub_vel = nh_.subscribe("/cmd_vel", 100, &Robot_HW_INT::cmdCallback, this);
     pub_vel = nh_.advertise<hw_int::velocidades>("/velocity_cmd", 1);
-    pub_odom = nh_.advertise<hw_int::velocidades>("/odom", 1);
+    pub_odom = nh_.advertise<nav_msgs::Odometry>("/odom", 1);
 
     current_time_ = ros::Time::now();
     last_time_ = ros::Time::now();
@@ -41,41 +41,70 @@ void Robot_HW_INT::init()
     registerInterface(&velocity_joint_interface_);
 }
 
-// void Robot_HW_INT::encoderCallback(const robot_control::encoder_data::ConstPtr &msg)
-// {
-//     double data[2];
-    
-//     // Dados dos encoderes
-//     data[0] = msg->front_left_encoder_data;
-//     data[1] = msg->front_right_encoder_data;
-  
+// Parâmetros do robô
+const double WHEEL_RADIUS = 0.049025; // Raio da roda em metros
+const double WHEEL_BASE = 0.283;   // Distância entre as rodas em metros
 
-//     std::cout << "Data: " << data[0] << " " << data[1] << std::endl;
+// Variáveis globais para odometria acumulada
+double x = 0.0, y = 0.0, theta = 0.0;
+ros::Time last_time;
 
-//     current_time_ = ros::Time::now();
-//     elapsed_time_ = current_time_ - last_time_;
+// Callback para o tópico "encoder_data"
+void Robot_HW_INT::encoderCallback(const hw_int::encoder::ConstPtr &msg){
+    static tf::TransformBroadcaster odom_broadcaster;
 
-//     // Atualiza a velocidade das juntas de acordo com o tempo passado e posição atual
-//     joints_[0].velocity = data[0] / elapsed_time_.toSec();
-//     joints_[1].velocity = data[1] / elapsed_time_.toSec();
-    
+    // Velocidades angulares das rodas em rad/s
+    double left_wheel_speed = msg->encoder_esq;
+    double right_wheel_speed = msg->encoder_dir;
 
-//     robot_control::velocity_data velocity_msg;
+    double dt = 1/20; // considerando uma frequencia de 20hz
 
-//     // acho que aqui deveria vir o cálculo do pid?
+    // Velocidades lineares das rodas
+    double v_left = left_wheel_speed * WHEEL_RADIUS;
+    double v_right = right_wheel_speed * WHEEL_RADIUS;
 
-//     velocity_msg.front_left_velocity = joints_[0].velocity_command;
-//     velocity_msg.front_right_velocity = joints_[1].velocity_command;
-  
-//     // Publica a velocidade dos motores ()
-//     // pub_.publish(velocity_msg);
+    // Velocidade linear e angular do robô
+    double linear_velocity = (v_left + v_right) / 2.0;
+    double angular_velocity = (v_right - v_left) / WHEEL_BASE;
 
-//     std::cout << "Velocity: " << velocity_msg.front_left_velocity << " " << velocity_msg.front_right_velocity << " " << velocity_msg.rear_left_velocity << " " << velocity_msg.rear_right_velocity << std::endl;
+    // Atualização da posição acumulada
+    theta += angular_velocity * dt;
+    double dx = linear_velocity * cos(theta) * dt;
+    double dy = linear_velocity * sin(theta) * dt;
+    x += dx;
+    y += dy;
 
-//     last_time_ = current_time_;
+    // Publicação da mensagem de odometria
+    ros::Time current_time = ros::Time::now();
+    nav_msgs::Odometry odom;
+    odom.header.stamp = current_time;
+    odom.header.frame_id = "odom";
 
-//     controller_manager_->update(ros::Time::now(), elapsed_time_);
-// }
+    // Pose
+    odom.pose.pose.position.x = x;
+    odom.pose.pose.position.y = y;
+    odom.pose.pose.position.z = 0.0;
+    odom.pose.pose.orientation = tf::createQuaternionMsgFromYaw(theta);
+
+    // Twist
+    odom.child_frame_id = "base_link";
+    odom.twist.twist.linear.x = linear_velocity;
+    odom.twist.twist.angular.z = angular_velocity;
+
+    pub_odom.publish(odom);
+
+    // Publicação do tf
+    geometry_msgs::TransformStamped odom_tf;
+    odom_tf.header.stamp = current_time;
+    odom_tf.header.frame_id = "odom";
+    odom_tf.child_frame_id = "base_link";
+    odom_tf.transform.translation.x = x;
+    odom_tf.transform.translation.y = y;
+    odom_tf.transform.translation.z = 0.0;
+    odom_tf.transform.rotation = odom.pose.pose.orientation;
+
+    odom_broadcaster.sendTransform(odom_tf);
+}
 
 
 void Robot_HW_INT::cmdCallback(const geometry_msgs::Twist::ConstPtr &vel){
@@ -103,6 +132,8 @@ void Robot_HW_INT::publica_vel(){
     msg.vel_dir = velocidade_dir;
 
     pub_vel.publish(msg);
+    velocidade_dir = 0;
+    velocidade_esq = 0;
 }
 
 

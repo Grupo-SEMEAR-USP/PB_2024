@@ -1,8 +1,0 @@
-prefix=/home/beatriz/Desktop/Codigos/Repos/PB_2024/Rasp/catkin_ws/install
-
-Name: hw_int
-Description: Description of hw_int
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -lhw_int
-Requires: roscpp rospy message_runtime controller_manager

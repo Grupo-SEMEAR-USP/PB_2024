@@ -1,0 +1,3 @@
+rostopic pub -r 1 /encoder_data hw_int/encoder "encoder_esq: 0.5 encoder_dir: 5.0" 
+
+rostopic pub -r 20 /encoder_data hw_int/encoder "encoder_esq: 5.0 encoder_dir: 5.0"

@@ -84,9 +84,11 @@ float pulse_count(pcnt_unit_handle_t encoder, type_side_encoder side){
 
     pcnt_unit_clear_count(encoder); //zera o contador de pulsos
 
+    int k = 0.01745;
+    int vel_rad = pulse_count*k;
     // Atualiza variáveis globais
-    if(side == ENCODER_RIGHT) ENCODER_READ_R = pulse_count;
-    else ENCODER_READ_L = pulse_count;
+    if(side == ENCODER_RIGHT) ENCODER_READ_R = vel_rad;
+    else ENCODER_READ_L = vel_rad;
 
     return pulse_count;
 }

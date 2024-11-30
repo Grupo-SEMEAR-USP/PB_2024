@@ -36,8 +36,9 @@ void limite_PWM(float *val, float target_vel){
 esp_err_t pid_apply(float* val_incrementado, pid_ctrl_block_handle_t pid, type_side_motor motor, pcnt_unit_handle_t encoder, float target_vel){
     
     type_side_encoder side = ((motor == MOTOR_RIGHT)? ENCODER_RIGHT : ENCODER_LEFT); 
+    float k = 0.01745; // constante de conversão ticks pra rpm 
 
-    float k = 1; // constante de conversão ticks x rpm (a definir)
+    // vel da roda em rad/s
     float vel_atual = (float)pulse_count(encoder, side) * k; // (delay de 50ms)
 
     float erro = target_vel - vel_atual;

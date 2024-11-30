@@ -12,7 +12,10 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   geometry_msgs
   message_generation  
+  message_runtime
+  nav_msgs
   controller_manager
+  tf
 )
 
 ## System dependencies are found with CMake's conventions
@@ -52,6 +55,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   FILES
   velocidades.msg
+  encoder.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -111,7 +115,7 @@ generate_messages(
 catkin_package(
  INCLUDE_DIRS include
  LIBRARIES hw_int
- CATKIN_DEPENDS roscpp rospy message_runtime controller_manager
+ CATKIN_DEPENDS roscpp rospy message_runtime controller_manager tf
  DEPENDS system_lib
 )
 
@@ -151,6 +155,7 @@ add_executable(hardware_int src/hardware_int.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(hardware_int ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
